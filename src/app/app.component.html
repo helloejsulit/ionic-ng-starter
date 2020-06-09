@@ -1,3 +1,43 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" menuId="main-content">
+      <ion-header class="ion-no-border ion-padding">
+        <ion-toolbar>
+          <ion-thumbnail class="ion-float-left">
+            <img [src]="headerImg" />
+          </ion-thumbnail>
+          <ion-title class="menu-header-title ion-float-left">
+            {{ appTitle }}
+          </ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list-header>
+          <ion-label>
+            {{ headerName }}
+          </ion-label>
+        </ion-list-header>
+
+        <ion-list>
+          <ion-menu-toggle
+            autoHide="true"
+            *ngFor="let p of appPages; let i = index"
+          >
+            <ion-item
+              [routerLink]="p.url"
+              routerLinkActive="selected"
+              lines="none"
+            >
+              <ion-icon slot="start" [name]="p.icon + '-outline'"></ion-icon>
+              <ion-label>
+                {{ p.title }}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
 </ion-app>

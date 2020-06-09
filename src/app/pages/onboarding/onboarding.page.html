@@ -1,0 +1,61 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button color="primary" (click)="startApp()" [hidden]="!showSkip">
+        Skip
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <ion-slides
+    #slides
+    (ionSlideWillChange)="onSlideChangeStart($event)"
+    pager="false"
+  >
+    <ion-slide>
+      <img src="https://picsum.photos/200" class="slide-image" />
+      <h2 class="slide-title">
+        Hello
+        <b>World!</b>
+      </h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem eius est
+        nam rem voluptate, eaque nihil voluptatibus placeat numquam omnis
+        tenetur incidunt amet mollitia a earum totam vel distinctio. Autem!
+      </p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="https://picsum.photos/200" class="slide-image" />
+      <h2 class="slide-title">Hello, World!</h2>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet cumque
+        suscipit recusandae autem facilis consequatur officiis eos, fugit nihil
+        earum doloremque blanditiis sequi eveniet illo inventore, rem eligendi,
+        explicabo impedit!
+      </p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="https://picsum.photos/200" class="slide-image" />
+      <h2 class="slide-title">Hello, World!</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+        asperiores eligendi eaque maxime adipisci, nisi ipsum distinctio
+        doloribus neque, possimus assumenda ab dolores libero quasi modi fugiat
+        quam ratione explicabo?
+      </p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="https://picsum.photos/200" class="slide-image" />
+      <h2 class="slide-title">Ready to Play?</h2>
+      <ion-button fill="clear" (click)="startApp()">
+        Continue
+        <ion-icon slot="end" name="arrow-forward"></ion-icon>
+      </ion-button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
