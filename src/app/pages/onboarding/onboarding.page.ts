@@ -21,9 +21,13 @@ export class OnboardingPage implements OnInit {
     this.menu.enable(false);
   }
 
+  ionViewDidLeave() {
+    this.menu.enable(true);
+  }
+
   startApp() {
     this.router
-      .navigateByUrl("/app/tabs/schedule", { replaceUrl: true })
+      .navigateByUrl("/app/tabs/tab1", { replaceUrl: true })
       .then(() => console.log("save onboarding data to storage"));
   }
 
