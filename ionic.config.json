@@ -1,0 +1,7 @@
+{
+  "name": "ng-fb-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
